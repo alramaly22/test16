@@ -136,3 +136,16 @@ if (typeof AOS !== 'undefined') {
         duration: 1500
     });
 }
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+    if (loader) {
+        loader.classList.add("loader-hidden");
+
+        // fallback لو transitionend مشتغلش
+        setTimeout(() => {
+            if (document.body.contains(loader)) {
+                document.body.removeChild(loader);
+            }
+        }, 1000);
+    }
+});
