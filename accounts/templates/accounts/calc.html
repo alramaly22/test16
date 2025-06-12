@@ -11,11 +11,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
     />
+     <link rel="shortcut icon" href="{% static 'assets/img/logo-2.svg' %}" type="image/x-icon">
+
     <link rel="stylesheet" href="{% static 'assets/css/test.css' %}" />
     <title>BMI Calculator</title>
   </head>
 
   <body>
+    <div class="loader">
+    <img src="{% static 'assets/img/logo-2.svg' %}" alt="Logo" class="loader-logo" />
+    <span class="wave wave1"></span>
+    <span class="wave wave2"></span>
+    <span class="wave wave3"></span>
+    <span class="wave wave4"></span>
+</div>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav containereo">
