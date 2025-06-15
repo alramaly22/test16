@@ -10,6 +10,8 @@ def index(request):
 
 def about(request):
     return render(request, 'accounts/about.html')
+def calc2(request):
+    return render(request, 'accounts/calc2.html')
 
 def calc(request):
     return render(request, 'accounts/calc.html')
