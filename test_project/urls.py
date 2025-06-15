@@ -9,6 +9,7 @@ urlpatterns = [
     path('about.html', views.about, name='about'),
     path('test2.html', views.test2, name='test2'),
     path('calc/', views.calc, name='calc'),
+    path('calc2/', views.calc2, name='calc2'),
     path('package1.html', views.package1, name='package1'),
     path('package2.html', views.package2, name='package2'),
     path('package3.html', views.package3, name='package3'),
