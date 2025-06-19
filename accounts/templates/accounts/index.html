@@ -44,7 +44,7 @@
                     <li><a href="#visit" class="nav__link" data-lang="packagevnav2">Packages with follow-up</a></li>
                     <li><a href="{% url 'about' %}#faqs" class="nav__link" data-lang="packagevnav3">FAQs</a></li>
 
-                    <li><a href="{% url 'calc' %}" class="nav__link" data-lang="clacvnav">CALCULATOR</a></li>
+                    <li><a href="{% url 'test2' %}" class="nav__link" data-lang="clacvnav">CALCULATOR</a></li>
                 </ul>
                 <div class="nav__colse" id="nav-close">
                     <i class="ri-close-large-line"></i>
@@ -108,7 +108,7 @@
         </nav>
     </header>
 
-  <!--==================== MAIN ====================-->
+<!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== HOME ====================-->
         <section class="home section" id="home">
@@ -441,7 +441,10 @@
                         <img src="{% static 'assets/img/package/T.webp' %}" alt="" class="menu__img">
                         <h3 class="menu__name" data-lang="menuh31">Balanced Sculpt Program</h3>
                         {% comment %} <span class="menu__detail" data-lang="menuhspan1">Focus on arms, inner thighs & full-body balance</span> {% endcomment %}
+                        <div class="menu__price-box">
+                        <span class="menu__old-price">$80</span>
                         <span class="menu__preci">$55</span>
+                        </div>
                         <a href="{% url 'package1' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
                     </div>
             
@@ -449,7 +452,10 @@
                         <img src="{% static 'assets/img/package/TM.webp' %}" alt="" class="menu__img">
                         <h3 class="menu__name"  data-lang="menuh32">Lower Body & Glutes Program</h3>
                         {% comment %} <span class="menu__detail" data-lang="menuhspan2">Target glutes, inner thighs & core – without bulking your legs</span> {% endcomment %}
-                        <span class="menu__preci">$97</span>
+                        <div class="menu__price-box">
+                        <span class="menu__old-price">$80</span>
+                        <span class="menu__preci">$55</span>
+                        </div>
                         <a href="{% url 'package2' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
                     </div>
             
@@ -457,14 +463,21 @@
                         <img src="{% static 'assets/img/package/TS.webp' %}" alt="" class="menu__img">
                         <h3 class="menu__name"  data-lang="menuh33">Balanced Body Program</h3>
                         {% comment %} <span class="menu__detail" data-lang="menuhspan3">Train upper & lower body in harmony – 2 days per week</span> {% endcomment %}
-                        <span class="menu__preci">$39</span>
+                        <div class="menu__price-box">
+                        <span class="menu__old-price">$80</span>
+                        <span class="menu__preci">$55</span>
+                        </div>
                         <a href="{% url 'package3' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
                     </div>
                     <div class="menu__content" data-package="package3">
                         <img src="{% static 'assets/img/package/W.webp' %}" alt="" class="menu__img">
                         <h3 class="menu__name"  data-lang="menuh34">Hourglass Body Program</h3>
                         {% comment %} <span class="menu__detail" data-lang="menuhspan4">Shape glutes, waist & upper body for the hourglass look</span> {% endcomment %}
-                        <span class="menu__preci">$39</span>
+                        <div class="menu__price-box">
+                        <span class="menu__old-price">$80</span>
+                        <span class="menu__preci">$55</span>
+                        </div>
+
                         <a href="{% url 'package4' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
                     </div>
                 </div>
@@ -534,7 +547,7 @@
                     </h2>
 
                     <p data-lang="nurationp3" class="nutrantion__description">
-                        Discover your daily calorie needs effortlessly with our exclusive calculator. Simply enter your age, weight, and height to get started. This tool is a gift from Coach Wasim to help you stay on track with your nutrition goals.
+                        Discover your daily calorie needs effortlessly with our exclusive calculator. Simply enter your age, weight, and height to get started. This tool is a gift from Coach Omar to help you stay on track with your nutrition goals.
                     </p>
 
                     <div class="nutrantion__details">
@@ -679,7 +692,7 @@
                 <div class="visit__shadow"></div>
                 <div class="visit__content container grid">
                     <div class="visit__data">
-                        <h2 data-lang="visith2" style="color: #499569;" class="section__title">Join Our Online Coaching</h2>
+                        <h2 data-lang="visith2" style="color: #499569;" class="section__title">Get daily online coaching with Coach Omar or our dedicated Girls Team</h2>
                         <p data-lang="visitp" class="visit__description">
                             If you're a girl looking to train online with personalized coaching, just send a message to the number below and start your fitness journey with Coach Omar today!
                         </p>
@@ -835,7 +848,6 @@
     </a>
     <!--=============== SWIPER JS ===============-->
         <script src="{% static 'assets/js/language.js' %}"></script>
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const openBtn = document.getElementById('openCurrencyMenu');
@@ -846,12 +858,32 @@
         const currentFlag = document.getElementById('currentFlag');
         const priceEls = document.querySelectorAll('.menu__preci');
 
-        // ✅ أسعار الباقات مباشرة لكل عملة
+        // ✅ أسعار الباقات (قديم وجديد) حسب العملة
         const packagePrices = {
-            package1: { EGP: 499, USD: 19, SAR: 49, AED: 49 },
-            package2: { EGP: 499, USD: 19, SAR: 49, AED: 49 },
-            package3: { EGP: 499, USD: 19, SAR: 49, AED: 49 },
-            package4: { EGP: 499, USD: 19, SAR: 49, AED: 49 }
+            package1: {
+                EGP: { old: 800, new: 399 },
+                USD: { old: 45, new: 19 },
+                SAR: { old: 160, new: 69 },
+                AED: { old: 160, new: 69 }
+            },
+            package2: {
+                EGP: { old: 800, new: 399 },
+                USD: { old: 45, new: 19 },
+                SAR: { old: 160, new: 69 },
+                AED: { old: 160, new: 69 }
+            },
+            package3: {
+                EGP: { old: 800, new: 399 },
+                USD: { old: 45, new: 19 },
+                SAR: { old: 160, new: 69 },
+                AED: { old: 160, new: 69 }
+            },
+            package4: {
+                EGP: { old: 800, new: 399 },
+                USD: { old: 45, new: 19 },
+                SAR: { old: 160, new: 69 },
+                AED: { old: 160, new: 69 }
+            }
         };
 
         const flagMap = {
@@ -861,10 +893,10 @@
             USD: 'usd.webp'
         };
 
-        function getCurrencyForCountry(countryCode) {
-            if (countryCode === 'EG') return 'EGP';
-            if (countryCode === 'SA') return 'SAR';
-            if (countryCode === 'AE') return 'AED';
+        function getCurrencyForCountry(code) {
+            if (code === 'EG') return 'EGP';
+            if (code === 'SA') return 'SAR';
+            if (code === 'AE') return 'AED';
             return 'USD';
         }
 
@@ -872,13 +904,22 @@
             currentCurrencyEl.textContent = currency;
             currentFlag.innerHTML = `<img src="/static/assets/img/${flagMap[currency]}" width="20">`;
 
-            // تحديث أسعار الباقات من packagePrices
             priceEls.forEach((el, index) => {
                 const packageName = `package${index + 1}`;
-                const price = packagePrices[packageName][currency];
-                el.textContent = currency === 'USD'
-                    ? `$${price}`
-                    : `${price} ${currency}`;
+                const prices = packagePrices[packageName][currency];
+
+                const priceBox = el.parentElement;
+                const oldPriceEl = priceBox.querySelector('.menu__old-price');
+                const newPriceEl = priceBox.querySelector('.menu__preci');
+
+                if (oldPriceEl && newPriceEl) {
+                    oldPriceEl.textContent = currency === 'USD'
+                        ? `$${prices.old}`
+                        : `${prices.old} ${currency}`;
+                    newPriceEl.textContent = currency === 'USD'
+                        ? `$${prices.new}`
+                        : `${prices.new} ${currency}`;
+                }
             });
         }
 
@@ -909,11 +950,11 @@
             });
         });
 
-        // تعيين الأسعار الافتراضية عند التحميل لأول مرة
-        const defaultCurrency = 'USD';
-        setCurrency(defaultCurrency);
+        // أول تحميل
+        setCurrency('USD');
     });
 </script>
+
 <script>
     // أول ما الصفحة تجهز
     document.addEventListener('DOMContentLoaded', function () {
@@ -940,16 +981,16 @@
     document.addEventListener('DOMContentLoaded', () => {
         const bookPrices = {
             book1: {
-                USD: 69,
-                EGP: 55,
-                SAR: 93,
-                AED: 22
+                EGP: { old: 500, new: 199 },
+                USD: { old: 29, new: 11 },
+                SAR: { old: 100, new: 39 },
+                AED: { old: 100, new: 39 }
             },
             book2: {
-                USD: 77,
-                EGP: 96,
-                SAR: 39,
-                AED: 13
+                EGP: { old: 500, new: 199 },
+                USD: { old: 29, new: 11 },
+                SAR: { old: 100, new: 39 },
+                AED: { old: 100, new: 39 }
             }
         };
 
@@ -957,13 +998,28 @@
             const book1PriceEl = document.getElementById('book1-price');
             const book2PriceEl = document.getElementById('book2-price');
 
-            if (book1PriceEl && book2PriceEl && bookPrices.book1[currency] && bookPrices.book2[currency]) {
-                book1PriceEl.textContent = `${bookPrices.book1[currency]} ${currency}`;
-                book2PriceEl.textContent = `${bookPrices.book2[currency]} ${currency}`;
+            if (book1PriceEl && book2PriceEl) {
+                const b1 = bookPrices.book1[currency];
+                const b2 = bookPrices.book2[currency];
+
+                book1PriceEl.innerHTML = `
+                    <span style="text-decoration: line-through; color: #888; margin-right: 8px;">
+                        ${currency === 'USD' ? '$' + b1.old : b1.old + ' ' + currency}
+                    </span>
+                    <span style="color: #ff9500; font-weight: bold;">
+                        ${currency === 'USD' ? '$' + b1.new : b1.new + ' ' + currency}
+                    </span>`;
+
+                book2PriceEl.innerHTML = `
+                    <span style="text-decoration: line-through; color: #888; margin-right: 8px;">
+                        ${currency === 'USD' ? '$' + b2.old : b2.old + ' ' + currency}
+                    </span>
+                    <span style="color: #ff9500; font-weight: bold;">
+                        ${currency === 'USD' ? '$' + b2.new : b2.new + ' ' + currency}
+                    </span>`;
             }
         }
 
-        // نحاول ننتظر لما العنصر الأساسي يحدد العملة ويحدثها
         const observer = new MutationObserver(() => {
             const currency = document.getElementById('currentCurrency')?.textContent?.trim();
             if (currency) {
@@ -976,11 +1032,11 @@
             observer.observe(targetNode, { childList: true });
         }
 
-        // fallback: أول مرة تحميل
         const initCurrency = document.getElementById('currentCurrency')?.textContent?.trim() || 'USD';
         updateBookPrices(initCurrency);
     });
 </script>
+
 <script>
     function openBookPaymentModal(bookId) {
         const currency = document.getElementById('currentCurrency').textContent.trim();

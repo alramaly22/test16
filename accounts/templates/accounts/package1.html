@@ -43,7 +43,7 @@
                     <li><a href="#testimonial" class="nav__link" data-lang="testimonialvnav">TESTIMONIAL</a></li>
                     <li><a href="{% url 'index' %}#visit" class="nav__link" data-lang="packagevnav2">Packages with follow-up</a></li>
                     <li><a href="{% url 'about' %}#faqs" class="nav__link" data-lang="packagevnav3">FAQs</a></li>
-                    <li><a href="{% url 'calc' %}" class="nav__link" data-lang="clacvnav">CALCULATOR</a></li>
+                    <li><a href="{% url 'test2' %}" class="nav__link" data-lang="clacvnav">CALCULATOR</a></li>
                 </ul>
                 <div class="nav__colse" id="nav-close">
                     <i class="ri-close-large-line"></i>
@@ -111,7 +111,7 @@
     <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== HOME ====================-->
-        <section class="home3 section" id="home">
+        <section class="home3 section" id="home" lang="en" dir="ltr">
             <div class="home3__container container grid">
                 <h1 class="home__name" data-lang="homepackage31">
                     Focus on arms and inner thighs, and balance between upper and lower body.
@@ -131,63 +131,89 @@
                 </div>
         
                 <div class="home__info3">
-                    <div class="home__description3">
-                        <p data-lang="packagedesc1">
-                            This program is designed for women who want to focus on toning their arms (especially underarms), inner thighs, and glutes – with a goal of creating harmony between upper and lower body.
-                        </p>
-                        <p data-lang="packagedesc3">
-                            ✅ Recommended if your goal is to lift, shape, and round your glutes.
-                        </p>
-                        <p data-lang="packagedesc4">
-                            ✅ Perfect if you want to increase hip mobility and ankle flexibility.
-                        </p>
-                        <p data-lang="packagedesc5">
-                            ✅ Ideal for building core strength (abs, lower back & full core) to avoid injuries and back pain.
-                        </p>
-                        <p data-lang="packagedesc6">
-                            ✅ Great for toning your underarms and tightening the inner thighs.
-                        </p>
-                        <p data-lang="packagedesc7">
-                            ✅ If you're aiming for a proportional and balanced body – this is for you.
-                        </p>
-                        <br>
-                        <div class="hoasc">
-                            <p data-lang="packagedesc8">
-                                🔸 This is a 12-week gym-based program, designed to be done
-                             </p>
-                                <p id="workout-number">0</p>
-                                 <p  data-lang="packagedesc2">days per week.</p> 
-                        </div>
-                        <p data-lang="packagedesc9">
-                            🔸 Comes with a full Calorie & Macro Guide including protein, carbs & fats for all foods.
-                        </p>
-                        <p data-lang="packagedesc10">
-                            🔸 Includes a Recipe Book with over 70 easy & delicious meals and healthy treats.
-                        </p>
-                        <p data-lang="packagedesc11">
-                            🔸 Every workout is demonstrated in a detailed video with voice instructions, form tips, and common mistakes to avoid.
-                        </p>
-                        <p data-lang="packagedesc12">
-                            🔸 Each exercise shows the main and supporting muscles you're targeting.
-                        </p>
-                        <p data-lang="packagedesc13">
-                            🔸 Alternatives provided for each exercise – so you never miss a workout even if a machine is unavailable.
-                        </p>
-                        <p data-lang="packagedesc14">
-                            🔸 Includes general tips, how to use the program effectively, and explainer videos for each step.
-                        </p>
-                        <p data-lang="packagedesc15">
-                            🔸 Comes with a full glossary of gym terms so you understand everything you do.
-                        </p>
-                        <p data-lang="packagedesc16">
-                            🔸 Includes recommended sets, reps, rest periods, and weekly schedule with adjustable rest days.
-                        </p>
-                        <p data-lang="packagedesc17">
-                            🔸 Track your progress with a dedicated space for recording weights and improvements.
-                        </p>
-                        <p data-lang="packagedesc18">
-                            🔸 Bonus: Full guideline file with injury-prevention tips and important notes for safe training.
-                        </p>
+                    <div class="home__description3" >
+                        {% comment %} <p class="home3pargragh" data-lang="packagedesc1">
+                            4 days a week in the gym.
+                            </p> {% endcomment %}
+                                <div class="hoasc home3pargragh">
+                                        <p id="workout-number">0</p>
+                                        <p  data-lang="packagedesc1">days a week in the gym</p> 
+                                </div>
+                            <p class="home3pargragh" data-lang="packagedesc3123">
+                            Focus on glute tightening, core strengthening, and working on hip flexibility, arm toning (underside), inner thigh shaping, and overall body balance.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc3">
+                            Recommended if your goal is to shape and lift your glutes for a rounder appearance.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc4">
+                            Recommended if your goal is to improve the flexibility of your hip and ankle joints.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc5">
+                            Recommended if your goal is to strengthen your core (abs, full midsection, and lower back) to prevent pain and injuries.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc6">
+                            Recommended if you want to tone your arms (especially the back of your arms).
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc7">
+                            Recommended if you want to tighten the area between your thighs.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc8">
+                            Recommended if your goal is to balance your upper and lower body shape.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc9">
+                            This program is gym-based.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc10">
+                            Duration: 12 weeks.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc11">
+                            Includes a full calorie guide listing the calories, protein, carbs, and fats for all types of foods.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc12">
+                            Includes a recipe book with over 70 recipes (desserts and homemade meals).
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc13">
+                            Every workout includes a video with voice-over instructions, demonstrating proper form, common mistakes, and how to avoid them.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc14">
+                            Each exercise shows the target muscle and assisting muscles, so you know exactly what you're working.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc15">
+                            Each exercise includes alternatives in case you don’t like a specific move or don’t have the equipment at your gym.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc16">
+                            Includes general tips, complete program usage guide, and instructional videos to help you use the program easily.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc17">
+                            Includes gym terminology and definitions to help you understand what you're doing and why.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc18">
+                            The program includes reps, sets, rest time, and rest days tailored to your schedule, along with instructions to help you move efficiently.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc199">
+                            A tracking section is included to log your weights and monitor progress over time.
+                            </p>
+
+                            <p class="home3pargragh" data-lang="packagedesc2012">
+                            Includes a tips & instructions file that guides you through avoiding injuries and improving your workout performance.
+                            </p>
                     </div>
         
                     <div class="days-buttons">
@@ -386,86 +412,121 @@
     <script src="{% static 'assets/js/language.js' %}"></script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const openBtn = document.getElementById('openCurrencyMenu');
-        const closeBtn = document.getElementById('closeMenu');
-        const menu = document.getElementById('currencyMenu');
-        const menuItems = document.querySelectorAll('.menu-item[data-currency]');
-        const currentCurrencyEl = document.getElementById('currentCurrency');
-        const currentFlag = document.getElementById('currentFlag');
-        const priceEls = document.querySelectorAll('.menu__preci');
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.getElementById('openCurrencyMenu');
+    const closeBtn = document.getElementById('closeMenu');
+    const menu = document.getElementById('currencyMenu');
+    const menuItems = document.querySelectorAll('.menu-item[data-currency]');
+    const currentCurrencyEl = document.getElementById('currentCurrency');
+    const currentFlag = document.getElementById('currentFlag');
+    const priceEls = document.querySelectorAll('.menu__preci');
+    const workoutNumber = document.getElementById("workout-number");
+    const buttons = document.querySelectorAll('.btn-day');
 
-        const manualPrices = {
-            USD: {
-                package1: 19.00, // 3 Days
-                package2: 19.00  // 4 Days
-            },
-            EGP: {
-                package1: 499.00,
-                package2: 499.00
-            },
-            SAR: {
-                package1: 49.00,
-                package2: 49.00
-            },
-            AED: {
-                package1: 49.00,
-                package2: 49.00
-            }
-        };
-
-        const paymentLinks = {
-            EGP: {
-                package1: "https://app.fawaterk.com/paymentRequest/show/21693",
-                package2: "https://app.fawaterk.com/paymentRequest/show/21709",
-            },
-            SAR: {
-                package1: "https://app.fawaterk.com/paymentRequest/show/21695",
-                package2: "https://app.fawaterk.com/paymentRequest/show/21711",
-            },
-            AED: {
-                package1: "https://app.fawaterk.com/paymentRequest/show/21696",
-                package2: "https://app.fawaterk.com/paymentRequest/show/21712",
-            },
-            USD: {
-                package1: "https://app.fawaterk.com/paymentRequest/show/21694",
-                package2: "https://app.fawaterk.com/paymentRequest/show/21710",
-            }
-        };
-
-        let selectedCurrency = 'USD'; // default
-
-        function setCurrencyBasedOnLocation() {
-            fetch('/location/')
-                .then(response => response.json())
-                .then(data => {
-                    const country = data.country;
-                    if (country === 'EG') {
-                        selectedCurrency = 'EGP';
-                        updateCurrencyUI('EGP');
-                    } else if (country === 'SA') {
-                        selectedCurrency = 'SAR';
-                        updateCurrencyUI('SAR');
-                    } else if (country === 'AE') {
-                        selectedCurrency = 'AED';
-                        updateCurrencyUI('AED');
-                    } else {
-                        selectedCurrency = 'USD';
-                        updateCurrencyUI('USD');
-                    }
-                });
+    const manualPrices = {
+        USD: {
+            package1: 19.00,
+            package2: 19.00
+        },
+        EGP: {
+            package1: 499.00,
+            package2: 499.00
+        },
+        SAR: {
+            package1: 49.00,
+            package2: 49.00
+        },
+        AED: {
+            package1: 49.00,
+            package2: 49.00
         }
+    };
 
-        function updateCurrencyUI(currency) {
-            const flagMap = {
-                EGP: 'eg.png',
-                SAR: 'saudi.webp',
-                AED: 'unitearab.webp',
-                USD: 'usd.webp'
-            };
+    const paymentLinks = {
+        EGP: {
+            package1: "https://app.fawaterk.com/paymentRequest/show/21693",
+            package2: "https://app.fawaterk.com/paymentRequest/show/21709",
+        },
+        SAR: {
+            package1: "https://app.fawaterk.com/paymentRequest/show/21695",
+            package2: "https://app.fawaterk.com/paymentRequest/show/21711",
+        },
+        AED: {
+            package1: "https://app.fawaterk.com/paymentRequest/show/21696",
+            package2: "https://app.fawaterk.com/paymentRequest/show/21712",
+        },
+        USD: {
+            package1: "https://app.fawaterk.com/paymentRequest/show/21694",
+            package2: "https://app.fawaterk.com/paymentRequest/show/21710",
+        }
+    };
 
+    let selectedCurrency = 'USD'; // default
+
+    function setCurrencyBasedOnLocation() {
+        fetch('/location/')
+            .then(response => response.json())
+            .then(data => {
+                const country = data.country;
+                if (country === 'EG') {
+                    selectedCurrency = 'EGP';
+                    updateCurrencyUI('EGP');
+                } else if (country === 'SA') {
+                    selectedCurrency = 'SAR';
+                    updateCurrencyUI('SAR');
+                } else if (country === 'AE') {
+                    selectedCurrency = 'AED';
+                    updateCurrencyUI('AED');
+                } else {
+                    selectedCurrency = 'USD';
+                    updateCurrencyUI('USD');
+                }
+            });
+    }
+
+    function updateCurrencyUI(currency) {
+        const flagMap = {
+            EGP: 'eg.png',
+            SAR: 'saudi.webp',
+            AED: 'unitearab.webp',
+            USD: 'usd.webp'
+        };
+
+        currentCurrencyEl.textContent = currency;
+        currentFlag.innerHTML = `<img src="/static/assets/img/${flagMap[currency]}" width="20">`;
+
+        priceEls.forEach((el, index) => {
+            const packageName = `package${index + 1}`;
+            const price = manualPrices[currency][packageName];
+            el.textContent = `${price.toFixed(2)} ${currency}`;
+        });
+
+        buttons.forEach((button, index) => {
+            const packageName = `package${index + 1}`;
+            const price = manualPrices[currency][packageName];
+            button.setAttribute('data-link', paymentLinks[currency][packageName]);
+            button.setAttribute('data-price', price.toFixed(2));
+        });
+
+        buttons[0].click(); // يخلّي أول زر نشط
+    }
+
+    openBtn?.addEventListener('click', () => {
+        menu.classList.add('show');
+    });
+
+    closeBtn?.addEventListener('click', () => {
+        menu.classList.remove('show');
+    });
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const currency = item.getAttribute('data-currency');
+            const flag = item.getAttribute('data-flag');
+
+            selectedCurrency = currency;
             currentCurrencyEl.textContent = currency;
-            currentFlag.innerHTML = `<img src="/static/assets/img/${flagMap[currency]}" width="20">`;
+            currentFlag.innerHTML = `<img src="/static/assets/img/${flag}" width="20">`;
 
             priceEls.forEach((el, index) => {
                 const packageName = `package${index + 1}`;
@@ -473,7 +534,6 @@
                 el.textContent = `${price.toFixed(2)} ${currency}`;
             });
 
-            const buttons = document.querySelectorAll('.btn-day');
             buttons.forEach((button, index) => {
                 const packageName = `package${index + 1}`;
                 const price = manualPrices[currency][packageName];
@@ -481,68 +541,38 @@
                 button.setAttribute('data-price', price.toFixed(2));
             });
 
-            buttons[0].click();
-        }
-
-        openBtn.addEventListener('click', () => {
-            menu.classList.add('show');
-        });
-
-        closeBtn.addEventListener('click', () => {
+            buttons[0].click(); // يخلّي أول زر نشط
             menu.classList.remove('show');
         });
+    });
 
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const currency = item.getAttribute('data-currency');
-                const flag = item.getAttribute('data-flag');
+    setCurrencyBasedOnLocation();
 
-                selectedCurrency = currency;
-                currentCurrencyEl.textContent = currency;
-                currentFlag.innerHTML = `<img src="/static/assets/img/${flag}" width="20">`;
+    priceEls.forEach((el, index) => {
+        const packageName = `package${index + 1}`;
+        const price = manualPrices['USD'][packageName];
+        el.textContent = `${price.toFixed(2)} USD`;
+    });
 
-                priceEls.forEach((el, index) => {
-                    const packageName = `package${index + 1}`;
-                    const price = manualPrices[currency][packageName];
-                    el.textContent = `${price.toFixed(2)} ${currency}`;
-                });
+    workoutNumber.textContent = "3"; // القيمة المبدئية لما الصفحة تفتح
 
-                const buttons = document.querySelectorAll('.btn-day');
-                buttons.forEach((button, index) => {
-                    const packageName = `package${index + 1}`;
-                    const price = manualPrices[currency][packageName];
-                    button.setAttribute('data-link', paymentLinks[currency][packageName]);
-                    button.setAttribute('data-price', price.toFixed(2));
-                });
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
 
-                const firstButton = buttons[0];
-                firstButton.click();
-                menu.classList.remove('show');
-            });
-        });
+            const price = button.getAttribute("data-price");
+            const link = button.getAttribute("data-link");
+            const workoutCount = button.getAttribute("data-workout-count");
 
-        setCurrencyBasedOnLocation();
+            const priceValue = document.getElementById("price-value");
+            priceValue.textContent = `${Number(price).toLocaleString()} ${selectedCurrency}`;
 
-        priceEls.forEach((el, index) => {
-            const packageName = `package${index + 1}`;
-            const price = manualPrices['USD'][packageName];
-            el.textContent = `${price.toFixed(2)} USD`;
-        });
-
-        const buttons = document.querySelectorAll('.btn-day');
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                buttons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const price = button.getAttribute("data-price");
-                const link = button.getAttribute("data-link");
-                const priceValue = document.getElementById("price-value");
-
-                priceValue.textContent = `${Number(price).toLocaleString()} ${selectedCurrency}`;
-            });
+            workoutNumber.textContent = workoutCount; // هنا التعديل اللي انت محتاجه
         });
     });
+});
+
 </script>
 {% comment %} 
     <script>
