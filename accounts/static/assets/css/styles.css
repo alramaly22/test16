@@ -1160,6 +1160,7 @@
             justify-content: center;
             align-items: center;
             margin-top: 0.5rem;
+            flex-direction: column;
         }
         
         .menu__old-price {
@@ -1199,6 +1200,20 @@
             display: flex;
             padding: .625rem .813rem;
             border-radius: .5rem 0 .5rem 0;
+        }
+        
+        .menu__badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--first-color);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            z-index: 2;
         }
         /*=============== QUESTIONS ===============*/
         
@@ -2671,6 +2686,13 @@
             .thumbnails img {
                 width: 40px;
                 height: 40px;
+            }
+        }
+        
+        @media (min-width: 540px) {
+            .menu__price-box {
+                flex-direction: row;
+                /* لما الشاشة تكون أكبر من أو تساوي 540 */
             }
         }
         
