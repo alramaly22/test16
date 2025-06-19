@@ -1154,6 +1154,21 @@
             color: var(--white-color);
         }
         
+        .menu__price-box {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        
+        .menu__old-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: var(--small-font-size);
+            font-weight: 600;
+        }
+        
         .menu__preci {
             text-align: center;
         }
@@ -1355,6 +1370,18 @@
             top: -5px;
         }
         
+        .lang-ar .home__description3 {
+            text-align: right;
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+        }
+        
+        .lang-en .home__description3 {
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            direction: ltr;
+        }
+        
         .home3__container {
             padding-top: 2rem;
         }
@@ -1362,6 +1389,7 @@
         .home__name {
             font-size: var(--h1-font-size);
             text-align: center;
+            font-weight: 900;
         }
         
         .home__perfil3 {
@@ -1417,6 +1445,13 @@
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
             font-weight: 500;
+        }
+        
+        .home3pargragh {
+            line-height: 1.5rem;
+            font-size: 1rem;
+            font-weight: 900;
+            margin-bottom: 0.6rem;
         }
         
         .product-price {
