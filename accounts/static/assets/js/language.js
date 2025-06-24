@@ -272,6 +272,8 @@ const lang = {
 
         poph33: "عرض أكتر",
         poph23: "قصص نجاح البنات",
+        sale: "🔥 تخفيض",
+        sametoall: "🛑 إذا كنتِ حاملًا أو تعانين من أي إصابة، فلا أنصحك باتباع هذا البرنامج.",
 
 
     },
@@ -557,6 +559,9 @@ const lang = {
 
         poph33: "See More",
         poph23: "Client Success Stories",
+
+        sale: "🔥 SALE",
+        sametoall: "🛑 If you're pregnant or have any injuries, I don't recommend following this program.",
 
     }
 };
