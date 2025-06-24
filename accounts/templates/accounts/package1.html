@@ -139,6 +139,9 @@
                                         <p id="workout-number">0</p>
                                         <p  data-lang="packagedesc1">days a week in the gym</p> 
                                 </div>
+                            <p class="home3pargragh" data-lang="packagedesc10">
+                            Duration: 12 weeks.
+                            </p>
                             <p class="home3pargragh" data-lang="packagedesc3123">
                             Focus on glute tightening, core strengthening, and working on hip flexibility, arm toning (underside), inner thigh shaping, and overall body balance.
                             </p>
@@ -213,6 +216,9 @@
 
                             <p class="home3pargragh" data-lang="packagedesc2012">
                             Includes a tips & instructions file that guides you through avoiding injuries and improving your workout performance.
+                            </p>
+                            <p class="home3pargragh" data-lang="sametoall">
+                                If you're pregnant or have any injuries, I don't recommend following this program.
                             </p>
                     </div>
         
@@ -382,10 +388,14 @@
             </div>
             <div>
                 <h3 class="footer__title" data-lang="footerpayment">Payment Method</h3>
-                <div class="footer__pay">
+                 <div class="footer__pay">
                     <img src="{% static 'assets/img/footer-card-3.webp' %}" alt="" class="footer__pay-card">
                     <img src="{% static 'assets/img/footer-card-1.webp' %}" alt="" class="footer__pay-card">
                     <img src="{% static 'assets/img/footer-card-2.webp' %}" alt="" class="footer__pay-card">
+                    <img src="{% static 'assets/img/vodcash.png' %}" alt="" class="footer__pay-card">
+                    <img src="{% static 'assets/img/fawry.png' %}" alt="" class="footer__pay-card">
+                    <img src="{% static 'assets/img/aman.jpg' %}" alt="" class="footer__pay-card">
+                    {% comment %} <img src="{% static 'assets/img/paypal.png' %}" alt="" class="footer__pay-card"> {% endcomment %}
                 </div>
             </div>
             <div>
@@ -412,121 +422,88 @@
     <script src="{% static 'assets/js/language.js' %}"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const openBtn = document.getElementById('openCurrencyMenu');
-    const closeBtn = document.getElementById('closeMenu');
-    const menu = document.getElementById('currencyMenu');
-    const menuItems = document.querySelectorAll('.menu-item[data-currency]');
-    const currentCurrencyEl = document.getElementById('currentCurrency');
-    const currentFlag = document.getElementById('currentFlag');
-    const priceEls = document.querySelectorAll('.menu__preci');
-    const workoutNumber = document.getElementById("workout-number");
-    const buttons = document.querySelectorAll('.btn-day');
+    document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('openCurrencyMenu');
+        const closeBtn = document.getElementById('closeMenu');
+        const menu = document.getElementById('currencyMenu');
+        const menuItems = document.querySelectorAll('.menu-item[data-currency]');
+        const currentCurrencyEl = document.getElementById('currentCurrency');
+        const currentFlag = document.getElementById('currentFlag');
+        const priceEls = document.querySelectorAll('.menu__preci');
+        const workoutNumber = document.getElementById("workout-number");
+        const buttons = document.querySelectorAll('.btn-day');
 
-    const manualPrices = {
-        USD: {
-            package1: 19.00,
-            package2: 19.00
-        },
-        EGP: {
-            package1: 399.00,
-            package2: 399.00
-        },
-        SAR: {
-            package1: 69.00,
-            package2: 69.00
-        },
-        AED: {
-            package1: 69.00,
-            package2: 69.00
-        }
-    };
-
-    const paymentLinks = {
-        EGP: {
-            package1: "https://app.fawaterk.com/paymentRequest/show/21693",
-            package2: "https://app.fawaterk.com/paymentRequest/show/21709",
-        },
-        SAR: {
-            package1: "https://app.fawaterk.com/paymentRequest/show/21695",
-            package2: "https://app.fawaterk.com/paymentRequest/show/21711",
-        },
-        AED: {
-            package1: "https://app.fawaterk.com/paymentRequest/show/21696",
-            package2: "https://app.fawaterk.com/paymentRequest/show/21712",
-        },
-        USD: {
-            package1: "https://app.fawaterk.com/paymentRequest/show/21694",
-            package2: "https://app.fawaterk.com/paymentRequest/show/21710",
-        }
-    };
-
-    let selectedCurrency = 'USD'; // default
-
-    function setCurrencyBasedOnLocation() {
-        fetch('/location/')
-            .then(response => response.json())
-            .then(data => {
-                const country = data.country;
-                if (country === 'EG') {
-                    selectedCurrency = 'EGP';
-                    updateCurrencyUI('EGP');
-                } else if (country === 'SA') {
-                    selectedCurrency = 'SAR';
-                    updateCurrencyUI('SAR');
-                } else if (country === 'AE') {
-                    selectedCurrency = 'AED';
-                    updateCurrencyUI('AED');
-                } else {
-                    selectedCurrency = 'USD';
-                    updateCurrencyUI('USD');
-                }
-            });
-    }
-
-    function updateCurrencyUI(currency) {
-        const flagMap = {
-            EGP: 'eg.png',
-            SAR: 'saudi.webp',
-            AED: 'unitearab.webp',
-            USD: 'usd.webp'
+        const manualPrices = {
+            USD: {
+                package1: 19.00,
+                package2: 19.00
+            },
+            EGP: {
+                package1: 399.00,
+                package2: 399.00
+            },
+            SAR: {
+                package1: 69.00,
+                package2: 69.00
+            },
+            AED: {
+                package1: 69.00,
+                package2: 69.00
+            }
         };
 
-        currentCurrencyEl.textContent = currency;
-        currentFlag.innerHTML = `<img src="/static/assets/img/${flagMap[currency]}" width="20">`;
+        const paymentLinks = {
+            EGP: {
+                package1: "https://app.fawaterk.com/paymentRequest/show/21693",
+                package2: "https://app.fawaterk.com/paymentRequest/show/21709",
+            },
+            SAR: {
+                package1: "https://app.fawaterk.com/paymentRequest/show/21695",
+                package2: "https://app.fawaterk.com/paymentRequest/show/21711",
+            },
+            AED: {
+                package1: "https://app.fawaterk.com/paymentRequest/show/21696",
+                package2: "https://app.fawaterk.com/paymentRequest/show/21712",
+            },
+            USD: {
+                package1: "https://app.fawaterk.com/paymentRequest/show/21694",
+                package2: "https://app.fawaterk.com/paymentRequest/show/21710",
+            }
+        };
 
-        priceEls.forEach((el, index) => {
-            const packageName = `package${index + 1}`;
-            const price = manualPrices[currency][packageName];
-            el.textContent = `${price.toFixed(2)} ${currency}`;
-        });
+        let selectedCurrency = 'USD'; // default
 
-        buttons.forEach((button, index) => {
-            const packageName = `package${index + 1}`;
-            const price = manualPrices[currency][packageName];
-            button.setAttribute('data-link', paymentLinks[currency][packageName]);
-            button.setAttribute('data-price', price.toFixed(2));
-        });
+        function setCurrencyBasedOnLocation() {
+            fetch('/location/')
+                .then(response => response.json())
+                .then(data => {
+                    const country = data.country;
+                    if (country === 'EG') {
+                        selectedCurrency = 'EGP';
+                        updateCurrencyUI('EGP');
+                    } else if (country === 'SA') {
+                        selectedCurrency = 'SAR';
+                        updateCurrencyUI('SAR');
+                    } else if (country === 'AE') {
+                        selectedCurrency = 'AED';
+                        updateCurrencyUI('AED');
+                    } else {
+                        selectedCurrency = 'USD';
+                        updateCurrencyUI('USD');
+                    }
+                });
+        }
 
-        buttons[0].click(); // يخلّي أول زر نشط
-    }
+        function updateCurrencyUI(currency) {
+            const flagMap = {
+                EGP: 'eg.png',
+                SAR: 'saudi.webp',
+                AED: 'unitearab.webp',
+                USD: 'usd.webp'
+            };
 
-    openBtn?.addEventListener('click', () => {
-        menu.classList.add('show');
-    });
-
-    closeBtn?.addEventListener('click', () => {
-        menu.classList.remove('show');
-    });
-
-    menuItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const currency = item.getAttribute('data-currency');
-            const flag = item.getAttribute('data-flag');
-
-            selectedCurrency = currency;
             currentCurrencyEl.textContent = currency;
-            currentFlag.innerHTML = `<img src="/static/assets/img/${flag}" width="20">`;
+            currentFlag.innerHTML = `<img src="/static/assets/img/${flagMap[currency]}" width="20">`;
 
             priceEls.forEach((el, index) => {
                 const packageName = `package${index + 1}`;
@@ -542,36 +519,69 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             buttons[0].click(); // يخلّي أول زر نشط
+        }
+
+        openBtn?.addEventListener('click', () => {
+            menu.classList.add('show');
+        });
+
+        closeBtn?.addEventListener('click', () => {
             menu.classList.remove('show');
         });
-    });
 
-    setCurrencyBasedOnLocation();
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const currency = item.getAttribute('data-currency');
+                const flag = item.getAttribute('data-flag');
 
-    priceEls.forEach((el, index) => {
-        const packageName = `package${index + 1}`;
-        const price = manualPrices['USD'][packageName];
-        el.textContent = `${price.toFixed(2)} USD`;
-    });
+                selectedCurrency = currency;
+                currentCurrencyEl.textContent = currency;
+                currentFlag.innerHTML = `<img src="/static/assets/img/${flag}" width="20">`;
 
-    workoutNumber.textContent = "3"; // القيمة المبدئية لما الصفحة تفتح
+                priceEls.forEach((el, index) => {
+                    const packageName = `package${index + 1}`;
+                    const price = manualPrices[currency][packageName];
+                    el.textContent = `${price.toFixed(2)} ${currency}`;
+                });
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            buttons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+                buttons.forEach((button, index) => {
+                    const packageName = `package${index + 1}`;
+                    const price = manualPrices[currency][packageName];
+                    button.setAttribute('data-link', paymentLinks[currency][packageName]);
+                    button.setAttribute('data-price', price.toFixed(2));
+                });
 
-            const price = button.getAttribute("data-price");
-            const link = button.getAttribute("data-link");
-            const workoutCount = button.getAttribute("data-workout-count");
+                buttons[0].click(); // يخلّي أول زر نشط
+                menu.classList.remove('show');
+            });
+        });
 
-            const priceValue = document.getElementById("price-value");
-            priceValue.textContent = `${Number(price).toLocaleString()} ${selectedCurrency}`;
+        setCurrencyBasedOnLocation();
 
-            workoutNumber.textContent = workoutCount; // هنا التعديل اللي انت محتاجه
+        priceEls.forEach((el, index) => {
+            const packageName = `package${index + 1}`;
+            const price = manualPrices['USD'][packageName];
+            el.textContent = `${price.toFixed(2)} USD`;
+        });
+
+        workoutNumber.textContent = "3"; // القيمة المبدئية لما الصفحة تفتح
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const price = button.getAttribute("data-price");
+                const link = button.getAttribute("data-link");
+                const workoutCount = button.getAttribute("data-workout-count");
+
+                const priceValue = document.getElementById("price-value");
+                priceValue.textContent = `${Number(price).toLocaleString()} ${selectedCurrency}`;
+
+                workoutNumber.textContent = workoutCount; // هنا التعديل اللي انت محتاجه
+            });
         });
     });
-});
 
 </script>
 {% comment %} 

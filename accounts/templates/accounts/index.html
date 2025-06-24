@@ -438,6 +438,8 @@
             
                 <div class="menu__container bd-grid">
                     <div class="menu__content" data-package="package1">
+                        <div class="menu__badge" data-lang="sale">🔥 SALE</div>
+
                         <img src="{% static 'assets/img/package/T.webp' %}" alt="" class="menu__img">
                         <h3 class="menu__name" data-lang="menuh31">Balanced Sculpt Program</h3>
                         {% comment %} <span class="menu__detail" data-lang="menuhspan1">Focus on arms, inner thighs & full-body balance</span> {% endcomment %}
@@ -449,6 +451,7 @@
                     </div>
             
                     <div class="menu__content" data-package="package2">
+                        <div class="menu__badge" data-lang="sale">🔥 SALE</div>
                         <img src="{% static 'assets/img/package/TM.webp' %}" alt="" class="menu__img">
                         <h3 class="menu__name"  data-lang="menuh32">Lower Body & Glutes Program</h3>
                         {% comment %} <span class="menu__detail" data-lang="menuhspan2">Target glutes, inner thighs & core – without bulking your legs</span> {% endcomment %}
@@ -460,6 +463,7 @@
                     </div>
             
                     <div class="menu__content" data-package="package3">
+                        <div class="menu__badge" data-lang="sale">🔥 SALE</div>
                         <img src="{% static 'assets/img/package/TS.webp' %}" alt="" class="menu__img">
                         <h3 class="menu__name"  data-lang="menuh33">Balanced Body Program</h3>
                         {% comment %} <span class="menu__detail" data-lang="menuhspan3">Train upper & lower body in harmony – 2 days per week</span> {% endcomment %}
@@ -470,6 +474,7 @@
                         <a href="{% url 'package3' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
                     </div>
                     <div class="menu__content" data-package="package3">
+                        <div class="menu__badge"  data-lang="sale">🔥 SALE</div>
                         <img src="{% static 'assets/img/package/W.webp' %}" alt="" class="menu__img">
                         <h3 class="menu__name"  data-lang="menuh34">Hourglass Body Program</h3>
                         {% comment %} <span class="menu__detail" data-lang="menuhspan4">Shape glutes, waist & upper body for the hourglass look</span> {% endcomment %}
@@ -508,7 +513,7 @@
                                 <li data-lang="ov6">Protein-packed smoothies for post-workout recovery</li>
                             </ul>
                             <p class="book__price" id="book1-price">150 EGP</p>
-                                <button class="book__btn" onclick="openBookPaymentModal('book2')" data-lang="bookbutton2">📥 Buy Now</button>
+                                <button class="book__btn" data-book-id="book1" data-lang="bookbutton2">📥 Buy Now</button>
                         </div>
                     </div>
         
@@ -529,7 +534,7 @@
                                 <li data-lang="ov10">Helpful for weight loss, muscle gain, or maintaining a healthy lifestyle</li>
                             </ul>
                             <p class="book__price" id="book2-price">120 EGP</p>
-                            <button class="book__btn" onclick="openBookPaymentModal('book2')" data-lang="bookbutton2">📥 Buy Now</button>
+                            <button class="book__btn" data-book-id="book2" data-lang="bookbutton2">📥 Buy Now</button>
                         </div>
                     </div>
                 </div>
@@ -825,7 +830,10 @@
                     <img src="{% static 'assets/img/footer-card-3.webp' %}" alt="" class="footer__pay-card">
                     <img src="{% static 'assets/img/footer-card-1.webp' %}" alt="" class="footer__pay-card">
                     <img src="{% static 'assets/img/footer-card-2.webp' %}" alt="" class="footer__pay-card">
-                    {% comment %} <img src="{% static 'assets/img/footer-card-4.png' %}" alt="" class="footer__pay-card"> {% endcomment %}
+                    <img src="{% static 'assets/img/vodcash.png' %}" alt="" class="footer__pay-card">
+                    <img src="{% static 'assets/img/fawry.png' %}" alt="" class="footer__pay-card">
+                    <img src="{% static 'assets/img/aman.jpg' %}" alt="" class="footer__pay-card">
+                    {% comment %} <img src="{% static 'assets/img/paypal.png' %}" alt="" class="footer__pay-card"> {% endcomment %}
                 </div>
             </div>
             <div>
@@ -1038,103 +1046,36 @@
 </script>
 
 <script>
-    function openBookPaymentModal(bookId) {
-        const currency = document.getElementById('currentCurrency').textContent.trim();
-
+    document.addEventListener('DOMContentLoaded', function () {
         const fawaterkLinks = {
             book1: {
-                EGP: "https://fawaterk.com/pay/book1-egp",
-                USD: "https://fawaterk.com/pay/book1-usd",
-                SAR: "https://fawaterk.com/pay/book1-sar",
-                AED: "https://fawaterk.com/pay/book1-aed"
+                EGP: "https://app.fawaterk.com/paymentRequest/show/22933",
+                USD: "https://app.fawaterk.com/paymentRequest/show/22936",
+                SAR: "https://app.fawaterk.com/paymentRequest/show/22935",
+                AED: "https://app.fawaterk.com/paymentRequest/show/22934"
             },
             book2: {
-                EGP: "https://fawaterk.com/pay/book2-egp",
-                USD: "https://fawaterk.com/pay/book2-usd",
-                SAR: "https://fawaterk.com/pay/book2-sar",
-                AED: "https://fawaterk.com/pay/book2-aed"
+                EGP: "https://app.fawaterk.com/paymentRequest/show/22937",
+                USD: "https://app.fawaterk.com/paymentRequest/show/22940",
+                SAR: "https://app.fawaterk.com/paymentRequest/show/22939",
+                AED: "https://app.fawaterk.com/paymentRequest/show/22938"
             }
         };
 
-        const paypalLinks = {
-            book1: {
-                EGP: "https://paypal.com/pay/book1-egp",
-                USD: "https://paypal.com/pay/book1-usd",
-                SAR: "https://paypal.com/pay/book1-sar",
-                AED: "https://paypal.com/pay/book1-aed"
-            },
-            book2: {
-                EGP: "https://paypal.com/pay/book2-egp",
-                USD: "https://paypal.com/pay/book2-usd",
-                SAR: "https://paypal.com/pay/book2-sar",
-                AED: "https://paypal.com/pay/book2-aed"
-            }
-        };
-
-        const fawaterkLink = fawaterkLinks[bookId][currency];
-        const paypalLink = paypalLinks[bookId][currency];
-
-        const modalHTML = `
-            <div id="bookPaymentModal" class="payment-modal">
-                <div class="modal-content">
-                    <span class="close-btn" onclick="closeBookPaymentModal()">&times;</span>
-                    <h3 style="margin-bottom: 1rem;">اختر طريقة الدفع للكتاب</h3>
-                    <div class="payment-buttons">
-                        <a href="${fawaterkLink}" class="btn btn-cart">الدفع عبر فواتيرك</a>
-                        <a href="${paypalLink}" class="btn btn-cart" style="background-color: #0070ba;">الدفع عبر PayPal</a>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        const modalStyle = `
-            <style id="book-modal-style">
-                .payment-modal {
-                    position: fixed;
-                    z-index: 9999;
-                    left: 0; top: 0;
-                    width: 100%; height: 100%;
-                    background: rgba(0, 0, 0, 0.5);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+        const bookButtons = document.querySelectorAll('.book__btn');
+        bookButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const bookId = this.getAttribute('data-book-id');
+                const currency = document.getElementById('currentCurrency')?.textContent?.trim() || 'USD';
+                const link = fawaterkLinks[bookId][currency];
+                if (link) {
+                    window.location.href = link;
                 }
-                .modal-content {
-                    background: #fff;
-                    padding: 2rem;
-                    border-radius: 1rem;
-                    text-align: center;
-                    position: relative;
-                }
-                .close-btn {
-                    position: absolute;
-                    top: 10px;
-                    right: 15px;
-                    cursor: pointer;
-                    font-size: 24px;
-                }
-                .payment-buttons a {
-                    display: inline-block;
-                    margin: 10px;
-                    padding: 0.8rem 1.5rem;
-                    border-radius: 8px;
-                    color: white;
-                    text-decoration: none;
-                }
-            </style>
-        `;
-
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        document.head.insertAdjacentHTML('beforeend', modalStyle);
-    }
-
-    function closeBookPaymentModal() {
-        const modal = document.getElementById('bookPaymentModal');
-        const style = document.getElementById('book-modal-style');
-        if (modal) modal.remove();
-        if (style) style.remove();
-    }
+            });
+        });
+    });
 </script>
+
 
     <!--=============== MAIN JS ===============-->
     <script src="{% static 'assets/js/main.js' %}"></script>
